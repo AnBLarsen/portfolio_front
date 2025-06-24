@@ -1,16 +1,18 @@
 
-import './App.css'
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/NavBar';
+import Home from './views/home/Home';
+import About from './views/about/About';
 
-function App() {
- 
-
+export default function App() {
   return (
-    <>
-      
-      <h1>portfolio</h1>
-    
-    </>
-  )
+    <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white transition-colors duration-300">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        
+      </Routes>
+    </div>
+  );
 }
-
-export default App
