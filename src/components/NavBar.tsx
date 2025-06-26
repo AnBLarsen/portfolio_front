@@ -47,13 +47,13 @@ export default function Navbar() {
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
     `text-sm font-medium transition-colors ${
       isActive
-        ? 'text-[#ba55d3]'
-        : 'text-gray-800 hover:text-[#663399] dark:text-gray-100 dark:hover:text-[#ba55d3]'
+        ? 'text-purple-light'
+        : 'text-gray-800 hover:text-purple-dark dark:text-gray-100 dark:hover:text-purple-light'
     }`;
 
   return (
     <nav className="flex items-center justify-evenly px-6 py-4 border-b border-gray-200 dark:border-gray-700 relative z-50">
-      <h2 className="text-2xl font-bold bg-gradient-to-r from-[#ba55d3] to-[#663399] text-transparent bg-clip-text">
+      <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-light to-purple-dark text-transparent bg-clip-text">
         Andrea Larsen
       </h2>
 
