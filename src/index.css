@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -5,12 +7,18 @@ body, html, #root {
   margin: 0;
   padding: 0;
   height: 100%;
+  font-family: "Nunito", sans-serif;
 }
 
 @theme{
-    --color-purple-dark: #663399;
-    --color-purple-light: #ba55d3;
+  --color-purple-dark: #663399;
+  --color-purple-light: #ba55d3;
+
+  --font-pacifico: Pacifico, "cursive";
+  --font-nunito: Nunito, "sans-serif";
 }
+
+
 
 .aurora-container {
   width: 100%;

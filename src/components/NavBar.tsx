@@ -45,21 +45,22 @@ export default function Navbar() {
   }, [mobileOpen]);
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `text-sm font-medium transition-colors ${
+    `text-lg font-bold transition-colors ${
       isActive
         ? 'text-purple-light'
         : 'text-gray-800 hover:text-purple-dark dark:text-gray-100 dark:hover:text-purple-light'
     }`;
 
   return (
-    <nav className="flex items-center justify-evenly px-6 py-4 border-b border-gray-200 dark:border-gray-700 relative z-50">
-      <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-light to-purple-dark text-transparent bg-clip-text">
-        Andrea Larsen
+    <nav className="flex items-center justify-evenly px-6 py-4  relative z-50">
+      <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-light to-purple-dark text-transparent bg-clip-text font-pacifico dark:border-purple-300 border-purple-dark text-center p-2 pr-3">
+        AL
       </h2>
 
       <div className="hidden md:flex items-center gap-6">
         {navItems.map((item) => (
-          <NavLink key={item} to={`/${item.toLowerCase()}`} className={navLinkClass}>
+          <NavLink key={item} to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+            className={navLinkClass}>
             {item}
           </NavLink>
         ))}
@@ -100,7 +101,7 @@ export default function Navbar() {
             {navItems.map((item) => (
               <NavLink
                 key={item}
-                to={`/${item.toLowerCase()}`}
+                to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
                 onClick={() => setMobileOpen(false)}
                 className={navLinkClass}
               >
