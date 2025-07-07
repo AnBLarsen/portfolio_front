@@ -1,5 +1,3 @@
-// src/components/CloudinaryImage.tsx
-
 import { Cloudinary } from '@cloudinary/url-gen';
 import { AdvancedImage } from '@cloudinary/react';
 import { auto } from '@cloudinary/url-gen/actions/resize';

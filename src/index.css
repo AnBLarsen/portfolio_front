@@ -8,7 +8,9 @@ body, html, #root {
   padding: 0;
   height: 100%;
   font-family: "Nunito", sans-serif;
+  
 }
+
 
 @theme{
   --color-purple-dark: #663399;
@@ -18,6 +20,14 @@ body, html, #root {
   --font-nunito: Nunito, "sans-serif";
 }
 
+.scrollbar-hide {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;   
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;            
+}
 
 
 .aurora-container {
@@ -28,3 +38,4 @@ body, html, #root {
   left: 0;
   z-index: 0;
 }
+

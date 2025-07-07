@@ -52,7 +52,7 @@ export default function Navbar() {
     }`;
 
   return (
-    <nav className="flex items-center justify-evenly px-6 py-4  relative z-50">
+    <nav className="flex items-center md:justify-evenly justify-between px-6 py-4  relative z-50">
       <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-light to-purple-dark text-transparent bg-clip-text font-pacifico dark:border-purple-300 border-purple-dark text-center p-2 pr-3">
         AL
       </h2>
