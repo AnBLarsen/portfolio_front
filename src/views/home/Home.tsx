@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, easeOut } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const titles = ['Web', 'Frontend', 'Full Stack'];
 
@@ -72,12 +73,12 @@ export default function Home() {
         animate="visible"
         variants={fadeInUp}
       >
-        <a
-          href="/projects"
+        <Link
+          to="/projects"
           className="group px-6 py-2 rounded-md font-semibold text-white bg-gradient-to-r from-purple-light to-purple-dark hover:from-purple-dark hover:to-purple-light transition-all duration-300"
         >
           Checkout My Work
-        </a>
+        </Link>
         <a
           href="https://drive.google.com/file/d/1Y6jUIt5_3GX12gInQSFibEZjN8ls4xsr/view?usp=sharing"
           target="_blank"
