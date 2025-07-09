@@ -53,7 +53,7 @@ export default function Contact() {
             name="name"
             required
             placeholder="Your Name"
-            className="w-full px-4 py-2 rounded-md border dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white"
+            className="w-full px-4 py-2 rounded-md border border-neutral-200 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white"
           />
           <label htmlFor="email">Email</label>
           <input
@@ -62,7 +62,7 @@ export default function Contact() {
             name="email"
             required
             placeholder="Your Email"
-            className="w-full px-4 py-2 rounded-md border dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white"
+            className="w-full px-4 py-2 rounded-md border border-neutral-200 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white"
           />
           <ValidationError prefix="Email" field="email" errors={state.errors} />
 
@@ -73,7 +73,7 @@ export default function Contact() {
             required
             placeholder="Your Message"
             rows={5}
-            className="w-full px-4 py-2 rounded-md border dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white"
+            className="w-full px-4 py-2 rounded-md border border-neutral-200 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-white"
           />
           <ValidationError prefix="Message" field="message" errors={state.errors} />
 
