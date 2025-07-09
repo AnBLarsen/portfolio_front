@@ -74,10 +74,9 @@ export default function About() {
           </h2>
 
           <p className="text-neutral-800 dark:text-neutral-300 leading-relaxed">
-            I'm a <strong className="text-purple-dark dark:text-purple-light">Full Stack Developer</strong> with a focus on frontend development.  
+            I'm a <span className='underline decoration-2 decoration-purple-light'>Full Stack Developer</span> with a focus on <strong className="text-purple-dark dark:text-purple-light">Frontend Development</strong>.  
             I started in the food industry as a pastry cook, but discovered a passion for design and tech. I earned a <strong className="text-purple-dark dark:text-purple-light">Diploma in Multimedia Design</strong> from Humber College with honours, and later joined a Full Stack Web Dev Bootcamp to grow further.
           </p>
-
           
         </motion.div>
       </motion.section>
@@ -98,7 +97,8 @@ export default function About() {
                 {[
                   'HTML', 'CSS', 'JavaScript', 'React', 'TypeScript',
                   'Next.js', 'Tailwind', 'Node.js', 'Express.js',
-                  'TypeORM', 'PostgreSQL',
+                  'TypeORM', 'PostgreSQL', 'Figma', 'Git', 'GitHub',
+                  'Framer Motion', 'Vite', 'Axios',
                 ].map((tech) => (
                   <span
                     key={tech}

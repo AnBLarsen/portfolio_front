@@ -6,6 +6,7 @@ import PageReveal from './components/PageReveal';
 import Aurora from './components/Aurora';
 import { useAuroraProps, useIsDark } from './hooks/useAuroraProps';
 import Projects from './views/projetcs/Projects';
+import Contact from './views/contact/Contact';
 
 
 export default function App() {
@@ -13,7 +14,7 @@ export default function App() {
   const auroraProps = useAuroraProps(isDark);
 
   return (
-    <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white transition-colors duration-300 relative">
+    <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white transition-colors duration-300 relative ">
       <Aurora {...auroraProps} isDark={isDark} />
       <PageReveal />
       <Navbar />
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </div>
   );

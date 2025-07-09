@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, easeOut } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const titles = ['Web', 'Frontend', 'Full Stack'];
+const titles = ['UX', 'Frontend', 'Full Stack'];
 
 const titleVariants = {
   initial: { rotateX: 90, opacity: 0, y: -10 },
@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 relative z-10">
       <motion.h2
-        className="text-5xl md:text-8xl font-extrabold font-pacifico bg-gradient-to-r from-purple-light to-purple-dark text-transparent bg-clip-text"
+        className="text-5xl md:text-8xl leading-40 font-extrabold font-pacifico bg-gradient-to-r from-purple-light to-purple-dark text-transparent bg-clip-text"
         initial="hidden"
         animate="visible"
         variants={fadeInUp}

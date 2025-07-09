@@ -126,12 +126,13 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex gap-4 ">
+                  
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-sm text-purple-dark dark:text-purple-light hover:underline cursor-pointer"
+                    className="flex items-center gap-1 text-md text-purple-dark dark:text-purple-light hover:underline cursor-pointer"
                   >
                     <FaGithub /> Code
                   </a>
@@ -139,7 +140,7 @@ export default function Projects() {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-sm text-purple-dark dark:text-purple-light hover:underline cursor-pointer"
+                    className="flex items-center gap-1 text-md text-purple-dark dark:text-purple-light hover:underline cursor-pointer"
                   >
                     <FaExternalLinkAlt /> Live
                   </a>
