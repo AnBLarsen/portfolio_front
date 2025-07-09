@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, easeOut } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const titles = ['UX', 'Frontend', 'Full Stack'];
+const titles = ['Frontend', 'UX', 'Full Stack'];
 
 const titleVariants = {
   initial: { rotateX: 90, opacity: 0, y: -10 },
@@ -33,7 +33,8 @@ export default function Home() {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 relative z-10">
+    <section className="py-20 px-4 text-center relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-64px)]">
+
       <motion.h2
         className="text-5xl md:text-8xl leading-40 font-extrabold font-pacifico bg-gradient-to-r from-purple-light to-purple-dark text-transparent bg-clip-text"
         initial="hidden"
@@ -44,7 +45,7 @@ export default function Home() {
       </motion.h2>
 
       <motion.p
-        className="mt-4 text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-bold flex items-center gap-2"
+        className="mt-4 text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-bold flex items-center justify-center gap-2"
         initial="hidden"
         animate="visible"
         variants={fadeInUp}
@@ -80,7 +81,7 @@ export default function Home() {
           Checkout My Work
         </Link>
         <a
-          href="https://drive.google.com/file/d/1Y6jUIt5_3GX12gInQSFibEZjN8ls4xsr/view?usp=sharing"
+          href="https://drive.google.com/file/d/1hCSFpM-NSdg_h4TXxV12mB7Eoht20Fw6/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="px-6 py-2 rounded-md font-semibold border text-purple-light border-purple-light hover:bg-purple-light hover:text-white transition"

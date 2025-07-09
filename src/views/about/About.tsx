@@ -49,7 +49,7 @@ export default function About() {
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
-          className="w-64 h-64 rounded-xl overflow-hidden shadow-lg border-2 border-fuchsia-100 dark:border-purple-light"
+          className="w-64 h-64 rounded-xl overflow-hidden shadow-lg  dark:border-purple-light"
         >
           <img
             src="https://res.cloudinary.com/dirwvgura/image/upload/piclight_haymgb.png"
@@ -70,15 +70,30 @@ export default function About() {
           className="max-w-xl text-center md:text-left space-y-6"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white">
-            About <span className="text-purple-dark dark:text-purple-light">Me</span>
+            About <span className="text-purple-light">Me</span>
           </h2>
 
-          <p className="text-neutral-800 dark:text-neutral-300 leading-relaxed">
-            I'm a <span className='underline decoration-2 decoration-purple-light'>Full Stack Developer</span> with a focus on <strong className="text-purple-dark dark:text-purple-light">Frontend Development</strong>.  
-            I started in the food industry as a pastry cook, but discovered a passion for design and tech. I earned a <strong className="text-purple-dark dark:text-purple-light">Diploma in Multimedia Design</strong> from Humber College with honours, and later joined a Full Stack Web Dev Bootcamp to grow further.
-          </p>
-          
+          <div className="space-y-6 text-neutral-800 dark:text-neutral-300 leading-relaxed">
+            <p >
+              <span className='text-xl font-bold '> 👋 Hi there,</span> I’m a Full Stack Developer with a strong focus on <span className='font-semibold text-purple-light'>Frontend Development</span> and a background in design.
+            </p>
+
+            <p>
+              My journey into tech started in an unexpected place, the kitchen 🍰. After several years working as a pastry cook, I discovered a passion for thoughtful design and building user-friendly digital experiences.
+              That led me to earn a <strong className="text-purple-dark dark:text-purple-light">Diploma in Multimedia Design & Development</strong> from Humber College, graduating with honours, where I gained a deep understanding of UX/UI principles, visual design, and responsive workflows.
+            </p>
+
+            <p>
+              To expand my technical skills, I completed an intensive Full Stack Web Development Bootcamp, where I built real-world projects that combine design thinking with scalable code.
+              I’m especially drawn to creating interfaces that are clean, accessible, and genuinely useful.
+            </p>
+
+            <p>
+              Right now, I’m focused on growing as a frontend developer and working on projects that blend <em>creativity</em>, <em>empathy</em>, and <em>performance</em> into thoughtful user experiences.
+            </p>
+          </div>
         </motion.div>
+
       </motion.section>
 
       <AnimatePresence>

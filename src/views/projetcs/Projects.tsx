@@ -77,12 +77,15 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="py-20 px-6 max-w-7xl mx-auto relative z-10 scrollbar-hide">
+    <section className="min-h-screen py-20 px-6 max-w-7xl mx-auto relative z-10 scrollbar-hide">
       <h2 className="text-4xl font-bold text-center mb-4 text-neutral-900 dark:text-white">
         Featured <span className="text-purple-light">Projects</span>
       </h2>
-      <p className="text-center text-neutral-600 dark:text-neutral-400 mb-10">
-        Here are some of my recent projects that showcase my skills and creativity as a developer.
+      <p className="text-center text-neutral-600 dark:text-neutral-400">
+        Here are some of my recent projects that showcase my skills and creativity as a developer. 
+      </p>
+      <p className="text-center italic text-neutral-600 dark:text-neutral-400 mb-10">
+        Note: For <strong>Tech Mobile</strong> and <strong>Lotus Spa</strong>, only the frontend is currently deployed. Backend deployment coming soon.
       </p>
 
       <div className="overflow-x-auto md:overflow-x-hidden scrollbar-hide">

@@ -2,8 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
 
 
-
-
 const VERT = `#version 300 es
 in vec2 position;
 void main() {
@@ -121,6 +119,7 @@ interface AuroraProps {
   time?: number;
   speed?: number;
   isDark?: boolean; 
+  className?: string;
 }
 
 export default function Aurora(props: AuroraProps) {
@@ -239,6 +238,10 @@ export default function Aurora(props: AuroraProps) {
     };
   }, [amplitude, colorStops, blend]);
 
-    return React.createElement("div", { ref: ctnDom, className: "aurora-container" });
-    
+    return (
+    React.createElement("div", {
+      ref: ctnDom,
+      className: `fixed inset-0 z-0 pointer-events-none ${props.className ?? ''}`,
+    })
+    );
 }

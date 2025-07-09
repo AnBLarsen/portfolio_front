@@ -25,7 +25,7 @@ export default function Contact() {
   }, [state.succeeded]);
 
   return (
-    <section className="h-screen px-6 max-w-5xl mx-auto flex flex-col items-center justify-center relative z-10">
+    <section className="relative min-h-screen px-6 py-20 max-w-5xl mx-auto flex flex-col items-center justify-center z-10">
       <motion.h2
         className="text-4xl md:text-5xl font-extrabold text-center text-neutral-900 dark:text-white mb-10"
         initial="hidden"
@@ -80,7 +80,7 @@ export default function Contact() {
           <button
             type="submit"
             disabled={state.submitting}
-            className="w-full py-2 bg-gradient-to-r from-purple-light to-purple-dark text-white font-semibold rounded-md hover:opacity-90 transition"
+            className="w-full py-2 bg-gradient-to-r from-purple-light to-purple-dark text-white font-semibold rounded-md hover:opacity-90 transition cursor-pointer"
           >
             {state.submitting ? 'Sending...' : 'Send Message'}
           </button>
