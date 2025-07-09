@@ -89,7 +89,7 @@ export default function Projects() {
       </p>
 
       <div className="overflow-x-auto md:overflow-x-hidden scrollbar-hide">
-        <div className="mx-auto flex gap-6 w-fit md:w-full justify-center px-4 md:px-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
           {projects.map((project, index) => (
             <motion.div
               key={index}
