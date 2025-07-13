@@ -10,10 +10,11 @@ import Contact from './views/contact/Contact';
 import Footer from './components/Footer';
 
 export default function App() {
+
   const isDark = useIsDark();
   const auroraProps = useAuroraProps(isDark);
 
-  return (
+    return (
     <div className="min-h-screen flex flex-col bg-white text-black dark:bg-black dark:text-white transition-colors duration-300 relative overflow-hidden">
      
       <Aurora {...auroraProps} isDark={isDark} className="fixed inset-0 -z-10 pointer-events-none" />
