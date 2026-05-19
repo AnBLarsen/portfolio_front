@@ -33,7 +33,7 @@ export default function Home() {
   }, []);
 
   return (
-    <section className="py-20 px-4 text-center relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-64px)]">
+    <section className="py-20 px-4 text-center relative z-10 flex flex-col items-center justify-center">
 
       <motion.h2
         className="text-5xl md:text-8xl leading-40 font-extrabold font-pacifico bg-gradient-to-r from-purple-light to-purple-dark text-transparent bg-clip-text"
@@ -41,7 +41,7 @@ export default function Home() {
         animate="visible"
         variants={fadeInUp}
       >
-        Andrea <span className="font-permanent-marker dark:text-neutral-300 text-neutral-700">Larsen</span>
+        Andrea <span className="font-pacifico dark:text-neutral-300 text-neutral-700">Larsen</span>
       </motion.h2>
 
       <motion.p
@@ -81,7 +81,7 @@ export default function Home() {
           Checkout My Work
         </Link>
         <a
-          href="https://drive.google.com/file/d/1hCSFpM-NSdg_h4TXxV12mB7Eoht20Fw6/view?usp=sharing"
+          href="https://canva.link/77v9cucsvnzbxwm"
           target="_blank"
           rel="noopener noreferrer"
           className="px-6 py-2 rounded-md font-semibold border text-purple-light border-purple-light hover:bg-purple-light hover:text-white transition"

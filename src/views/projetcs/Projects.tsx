@@ -77,7 +77,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="min-h-screen py-20 px-6 max-w-7xl mx-auto relative z-10 scrollbar-hide">
+    <section className="py-20 px-6 max-w-7xl mx-auto relative z-10 scrollbar-hide">
       <h2 className="text-4xl font-bold text-center mb-4 text-neutral-900 dark:text-white">
         Featured <span className="text-purple-light">Projects</span>
       </h2>

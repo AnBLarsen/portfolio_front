@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence, easeOut } from 'framer-motion';
 import Aurora from '../../components/Aurora';
 import { MapPin } from 'lucide-react';
@@ -19,6 +19,7 @@ const fadeInUp = {
 export default function About() {
   
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [showAllSkills, setShowAllSkills] = useState(false);
 
   const isDark = document.documentElement.classList.contains('dark');
 
@@ -36,7 +37,7 @@ export default function About() {
 
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center px-4 py-20 transition-all duration-500">
+    <div className="relative flex flex-col items-center justify-center px-4 py-20 transition-all duration-500">
       <Aurora {...auroraProps} isDark={isDark} />
 
       <motion.section
@@ -52,12 +53,12 @@ export default function About() {
           className="w-64 h-64 rounded-xl overflow-hidden shadow-lg  dark:border-purple-light"
         >
           <img
-            src="https://res.cloudinary.com/dirwvgura/image/upload/piclight_haymgb.png"
+            src="https://res.cloudinary.com/dirwvgura/image/upload/profile_gkbmyv.png"
             alt="Profile"
             className="w-full h-full object-cover dark:hidden"
           />
           <img
-            src="https://res.cloudinary.com/dirwvgura/image/upload/picdark_b9zh36.png"
+            src="https://res.cloudinary.com/dirwvgura/image/upload/profile_gkbmyv.png"
             alt="Profile dark"
             className="w-full h-full object-cover hidden dark:block"
           />
@@ -74,22 +75,30 @@ export default function About() {
           </h2>
 
           <div className="space-y-6 text-neutral-800 dark:text-neutral-300 leading-relaxed">
-            <p >
-              <span className='text-xl font-bold '> 👋 Hi there,</span> I’m a Full Stack Developer with a strong focus on <span className='font-semibold text-purple-light'>Frontend Development</span> and a background in design.
+            <p>
+              <span className="text-xl font-bold">👋 Hi there,</span> I’m a Software Engineer with hands-on experience building user-centered web applications using{" "}
+              <span className="font-semibold text-purple-light">
+                React, Next.js, TypeScript, Tailwind CSS, and Figma
+              </span>.
             </p>
 
             <p>
-              My journey into tech started in an unexpected place, the kitchen 🍰. After several years working as a pastry cook, I discovered a passion for thoughtful design and building user-friendly digital experiences.
-              That led me to earn a <strong className="text-purple-dark dark:text-purple-light">Diploma in Multimedia Design & Development</strong> from Humber College, graduating with honours, where I gained a deep understanding of UX/UI principles, visual design, and responsive workflows.
+              In my first tech role as a Software Engineer, I contributed to customer-facing web applications, user portal functionality, authentication flows, service recommendation experiences, frontend testing, analytics, monitoring, and cloud-based workflows.
             </p>
 
             <p>
-              To expand my technical skills, I completed an intensive Full Stack Web Development Bootcamp, where I built real-world projects that combine design thinking with scalable code.
-              I’m especially drawn to creating interfaces that are clean, accessible, and genuinely useful.
+              I’ve worked with tools and technologies including{" "}
+              <strong className="text-purple-dark dark:text-purple-light">
+                AWS Cognito, Playwright, Vitest, New Relic, CloudWatch, GitHub Actions, Docker, PostgreSQL, Salesforce, Jira, Notion, Cursor, and Claude
+              </strong>.
             </p>
 
             <p>
-              Right now, I’m focused on growing as a frontend developer and working on projects that blend <em>creativity</em>, <em>empathy</em>, and <em>performance</em> into thoughtful user experiences.
+              My background combines UX/UI design, frontend development, accessibility, and customer experience. Before transitioning into tech, I spent several years as a pastry cook, where I developed precision, creativity, time management, and strong attention to detail.
+            </p>
+
+            <p>
+              That experience still shapes how I build software: with care for the user, the process, and the final experience. Right now, I’m focused on expanding into full-stack development and creating thoughtful digital experiences that are clean, accessible, and genuinely useful.
             </p>
           </div>
         </motion.div>
@@ -106,24 +115,66 @@ export default function About() {
             transition={{ duration: 0.6, ease: easeOut }}
             className="mt-16 w-full max-w-5xl bg-white/40 dark:bg-black/40 text-white dark:text-white backdrop-blur-md rounded-xl mx-auto px-8 py-8 space-y-8"
           >
-            <div>
-              <h3 className="text-2xl font-bold text-purple-light mb-4">Tech Stack</h3>
-              <div className="flex flex-wrap gap-3">
-                {[
-                  'HTML', 'CSS', 'JavaScript', 'React', 'TypeScript',
-                  'Next.js', 'Tailwind', 'Node.js', 'Express.js',
-                  'TypeORM', 'PostgreSQL', 'Figma', 'Git', 'GitHub',
-                  'Framer Motion', 'Vite', 'Axios',
-                ].map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 bg-purple-dark text-white rounded-md text-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+            <h3 className="text-2xl font-bold text-purple-light">My Skills</h3>
+
+            <div className="flex flex-wrap gap-2">
+              {['Next.js', 'React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'REST APIs', 'Figma', 'AWS Cognito', 'Vitest', 'Playwright', 'GitHub Actions', 'Docker', 'CI/CD', 'Agile/Scrum'].map((skill) => (
+                <span key={skill} className="px-3 py-1 bg-purple-dark text-white rounded-md text-sm">
+                  {skill}
+                </span>
+              ))}
+              {!showAllSkills && (
+                <button
+                  onClick={() => setShowAllSkills(true)}
+                  className="px-3 py-1 border border-purple-light text-purple-light rounded-md text-sm hover:bg-purple-light hover:text-white transition-colors"
+                >
+                  + Show all
+                </button>
+              )}
             </div>
+
+            <AnimatePresence>
+              {showAllSkills && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.4, ease: easeOut }}
+                  className="overflow-hidden space-y-6"
+                >
+                  {[
+                    { label: 'Frontend', skills: ['Next.js', 'React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'HTML5', 'CSS3', 'Framer Motion', 'Responsive Design'] },
+                    { label: 'UX / UI', skills: ['Figma', 'FigJam', 'User Flows', 'Wireframing', 'Prototyping', 'Accessibility', 'WCAG'] },
+                    { label: 'Backend & APIs', skills: ['Next.js API Routes', 'Node.js', 'Express.js', 'REST APIs', 'PostgreSQL', 'SQL', 'MongoDB', 'TypeORM'] },
+                    { label: 'Authentication', skills: ['AWS Cognito', 'AWS Amplify', 'Auth0', 'JWT', 'Role-Based Access'] },
+                    { label: 'Testing', skills: ['Vitest', 'Playwright', 'Unit Testing', 'E2E Testing'] },
+                    { label: 'Cloud & DevOps', skills: ['GitHub Actions', 'Docker', 'Vercel', 'AWS ECS', 'S3', 'Aurora RDS', 'API Gateway', 'Secrets Manager', 'CloudWatch', 'CI/CD'] },
+                    { label: 'Observability & Analytics', skills: ['New Relic', 'Pino Logger', 'Google Tag Manager'] },
+                    { label: 'Integrations & Tools', skills: ['Salesforce', 'Moneris', 'TSYS', 'Strapi', 'Unleash', 'Git', 'GitHub', 'Jira', 'Notion', 'Cursor', 'Claude'] },
+                    { label: 'Practices', skills: ['Agile/Scrum', 'Feature Flags', 'Cross-Browser Compatibility', 'API Integration', 'Production Support'] },
+                  ].map(({ label, skills }, i, arr) => (
+                    <div key={label}>
+                      <h4 className="text-sm font-semibold text-purple-light uppercase tracking-wide mb-2">{label}</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {skills.map((skill) => (
+                          <span key={skill} className="px-3 py-1 bg-purple-dark text-white rounded-md text-sm">
+                            {skill}
+                          </span>
+                        ))}
+                        {i === arr.length - 1 && (
+                          <button
+                            onClick={() => setShowAllSkills(false)}
+                            className="px-3 py-1 border border-purple-light text-purple-light rounded-md text-sm hover:bg-purple-light hover:text-white transition-colors"
+                          >
+                            − Show less
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
             <div>
               <h3 className="text-2xl font-bold text-purple-light mb-4">Contact Info</h3>
               <div className="flex items-center gap-2 mb-2 text-neutral-800 dark:text-neutral-200">

@@ -25,7 +25,7 @@ export default function Contact() {
   }, [state.succeeded]);
 
   return (
-    <section className="relative min-h-screen px-6 py-20 max-w-5xl mx-auto flex flex-col items-center justify-center z-10">
+    <section className="relative px-6 py-20 max-w-5xl mx-auto flex flex-col items-center justify-center z-10">
       <motion.h2
         className="text-4xl md:text-5xl font-extrabold text-center text-neutral-900 dark:text-white mb-10"
         initial="hidden"
