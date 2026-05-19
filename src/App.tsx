@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { Analytics } from "@vercel/analytics/react"
 import Navbar from './components/NavBar';
 import Home from './views/home/Home';
 import About from './views/about/About';
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
+      <Analytics />
       <Footer />
     </div>
   );
