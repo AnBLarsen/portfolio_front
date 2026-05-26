@@ -76,7 +76,7 @@ export default function About() {
 
           <div className="space-y-6 text-neutral-800 dark:text-neutral-300 leading-relaxed">
             <p>
-              <span className="text-xl font-bold">👋 Hi there,</span> I’m a Software Engineer with hands-on experience building user-centered web applications using{" "}
+              <span className="text-xl font-bold">👋 Hi there,</span> I’m a Software Developer with hands-on experience building user-centered web applications using{" "}
               <span className="font-semibold text-purple-light">
                 React, Next.js, TypeScript, Tailwind CSS, and Figma
               </span>.
