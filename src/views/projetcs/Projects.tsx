@@ -85,7 +85,7 @@ export default function Projects() {
         Here are some of my recent projects that showcase my skills and creativity as a developer. 
       </p>
       <p className="text-center italic text-neutral-600 dark:text-neutral-400 mb-10">
-        Note: For <strong>Tech Mobile</strong> and <strong>Lotus Spa</strong>, only the frontend is currently deployed. Backend deployment coming soon.
+        Note: For <strong>Tech Mobile</strong> only the frontend is currently deployed. I'm building the backend with NextJS.
       </p>
 
       <div className="overflow-x-auto md:overflow-x-hidden scrollbar-hide">
