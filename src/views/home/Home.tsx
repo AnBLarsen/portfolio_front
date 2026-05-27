@@ -81,7 +81,7 @@ export default function Home() {
           Checkout My Work
         </Link>
         <a
-          href="https://canva.link/77v9cucsvnzbxwm"
+          href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="px-6 py-2 rounded-md font-semibold border text-purple-light border-purple-light hover:bg-purple-light hover:text-white transition"
