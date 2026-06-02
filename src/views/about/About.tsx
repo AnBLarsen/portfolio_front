@@ -3,6 +3,7 @@ import { motion, AnimatePresence, easeOut } from 'framer-motion';
 import Aurora from '../../components/Aurora';
 import { MapPin } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { usePageMeta } from '../../hooks/usePageMeta';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -17,7 +18,13 @@ const fadeInUp = {
 };
 
 export default function About() {
-  
+
+  usePageMeta({
+    title: 'About | Andrea Larsen',
+    description: 'Learn about Andrea Larsen, a web and UX developer from Toronto with experience in React, TypeScript, AWS, and more.',
+    canonical: 'https://www.andrealarsen.me/about',
+  });
+
   const sectionRef = useRef<HTMLDivElement>(null);
   const [showAllSkills, setShowAllSkills] = useState(false);
 

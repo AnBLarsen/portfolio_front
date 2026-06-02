@@ -1,5 +1,6 @@
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { motion, easeOut } from 'framer-motion';
+import { usePageMeta } from '../../hooks/usePageMeta';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -76,6 +77,12 @@ const projects = [
 ];
 
 export default function Projects() {
+  usePageMeta({
+    title: 'Projects | Andrea Larsen',
+    description: 'Web projects by Andrea Larsen, responsive web apps built with React, TypeScript, Next.js, and Tailwind CSS.',
+    canonical: 'https://www.andrealarsen.me/projects',
+  });
+
   return (
     <section className="py-20 px-6 max-w-7xl mx-auto relative z-10 scrollbar-hide">
       <h2 className="text-4xl font-bold text-center mb-4 text-neutral-900 dark:text-white">

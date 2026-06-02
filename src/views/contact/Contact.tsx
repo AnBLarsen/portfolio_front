@@ -1,4 +1,5 @@
 import { useRef, useEffect } from 'react';
+import { usePageMeta } from '../../hooks/usePageMeta';
 import { motion, easeOut } from 'framer-motion';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { useForm, ValidationError } from '@formspree/react';
@@ -14,6 +15,12 @@ const fadeInUp = {
 };
 
 export default function Contact() {
+  usePageMeta({
+    title: 'Contact | Andrea Larsen',
+    description: 'Get in touch with Andrea Larsen, frontend and UX developer based in Toronto, Canada.',
+    canonical: 'https://www.andrealarsen.me/contact',
+  });
+
   const [state, handleSubmit] = useForm("xanjgpay");
   const formRef = useRef<HTMLFormElement>(null);
 

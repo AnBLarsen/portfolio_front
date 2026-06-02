@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, easeOut } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { usePageMeta } from '../../hooks/usePageMeta';
 
 const titles = ['Frontend', 'UX', 'Full Stack'];
 
@@ -22,8 +23,34 @@ const fadeInUp = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Andrea Larsen',
+  url: 'https://www.andrealarsen.me',
+  jobTitle: 'Web Developer',
+  description: 'Web and UX developer based in Toronto, Canada, specializing in React, TypeScript, and Tailwind CSS.',
+  sameAs: [
+    'https://github.com/AnBLarsen',
+    'https://linkedin.com/in/andreablarsen/',
+  ],
+  knowsAbout: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'UX Design', 'Figma', 'Node.js'],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Toronto',
+    addressCountry: 'CA',
+  },
+};
+
 export default function Home() {
   const [index, setIndex] = useState(0);
+
+  usePageMeta({
+    title: 'Andrea Larsen | Web & UX Developer',
+    description: 'Web and UX developer based in Toronto, building responsive web apps with React, TypeScript, and Tailwind CSS.',
+    canonical: 'https://www.andrealarsen.me/',
+    jsonLd,
+  });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -35,14 +62,14 @@ export default function Home() {
   return (
     <section className="py-20 px-4 text-center relative z-10 flex flex-col items-center justify-center">
 
-      <motion.h2
+      <motion.h1
         className="text-5xl md:text-8xl leading-40 font-extrabold font-pacifico bg-gradient-to-r from-purple-light to-purple-dark text-transparent bg-clip-text"
         initial="hidden"
         animate="visible"
         variants={fadeInUp}
       >
         Andrea <span className="font-pacifico dark:text-neutral-300 text-neutral-700">Larsen</span>
-      </motion.h2>
+      </motion.h1>
 
       <motion.p
         className="mt-4 text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-bold flex items-center justify-center gap-2"
