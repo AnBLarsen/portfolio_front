@@ -16,6 +16,24 @@ const fadeInUp = {
 
 const projects = [
   {
+    title: 'Fulbeeto',
+    role: 'Frontend & AI Developer',
+    image: 'https://res.cloudinary.com/dirwvgura/image/upload/fulbeeto3_twpojt.png',
+    description:
+      'A World Cup 2026 fixture app powered by an agentic AI. BeeBot, a Claude-powered agent with tool use answers questions about matches, standings, and predictions in natural language. Built in English and Spanish.',
+    tech: [
+      'Next.js',
+      'Claude API',
+      'AI Agents',
+      'Tool Use',
+      'football-data.org',
+      'next-intl',
+      'Framer Motion',
+    ],
+    live: 'https://fulbeeto.vercel.app/en',
+    github: 'https://github.com/AnBLarsen/fulbeeto',
+  },
+  {
     title: 'SmartQR',
     role: 'UX/UI and Frontend Developer',
     image: 'https://res.cloudinary.com/dirwvgura/image/upload/Screenshot_From_2025-07-07_17-05-50_ysmsdl.png',
