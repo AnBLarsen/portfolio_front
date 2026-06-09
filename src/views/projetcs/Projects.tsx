@@ -54,6 +54,25 @@ const projects = [
     github: 'https://github.com/SmartQrProject',
   },
   {
+    title: 'Lotus Spa',
+    role: 'UX/UI and Full Stack Developer',
+    image: 'https://res.cloudinary.com/dirwvgura/image/upload/Screenshot_From_2025-07-07_17-04-38_cj3u5e.png',
+    description:
+    'A soothing full-stack spa booking platform. Clients can register, log in, and schedule services. Features a dynamic booking system, form validation, weekday-only date picker, and upcoming backend deployment.',
+    tech: [
+      'React Vite',
+      'Tailwind CSS',
+      'Formik',
+      'Yup',
+      'Axios',
+      'Node.js',
+      'PostgreSQL',
+      'Express.js',
+    ],
+    live: 'https://lotus-spa-seven.vercel.app/',
+    github: 'https://github.com/AnBLarsen/lotus_spa',
+  },
+  {
     title: 'Tech Mobile',
     role: 'UX/UI and Frontend Developer',
     image: 'https://res.cloudinary.com/dirwvgura/image/upload/Screenshot_From_2025-07-07_17-04-01_w067hr.png',
@@ -72,25 +91,6 @@ const projects = [
     ],
     live: 'https://tech-mobile-mocha.vercel.app/',
     github: 'https://github.com/AnBLarsen/tech-mobile',
-  },
-  {
-    title: 'Lotus Spa',
-    role: 'UX/UI and Full Stack Developer',
-    image: 'https://res.cloudinary.com/dirwvgura/image/upload/Screenshot_From_2025-07-07_17-04-38_cj3u5e.png',
-    description:
-      'A soothing full-stack spa booking platform. Clients can register, log in, and schedule services. Features a dynamic booking system, form validation, weekday-only date picker, and upcoming backend deployment.',
-    tech: [
-      'React Vite',
-      'Tailwind CSS',
-      'Formik',
-      'Yup',
-      'Axios',
-      'Node.js',
-      'PostgreSQL',
-      'Express.js',
-    ],
-    live: 'https://lotus-spa-seven.vercel.app/',
-    github: 'https://github.com/AnBLarsen/lotus_spa',
   },
 ];
 
