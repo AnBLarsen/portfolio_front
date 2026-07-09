@@ -3,7 +3,12 @@ import { AnimatePresence, motion, easeOut } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { usePageMeta } from '../../hooks/usePageMeta';
 
-const titles = ['Frontend', 'UX', 'Full Stack'];
+const specialties = 
+[
+  'Frontend-Focused',
+  'UX-Minded',
+  'Production-Ready',
+];
 
 const titleVariants = {
   initial: { rotateX: 90, opacity: 0, y: -10 },
@@ -27,14 +32,25 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Andrea Larsen',
-  url: 'https://www.andrealarsen.me',
-  jobTitle: 'Web Developer',
-  description: 'Web and UX developer based in Toronto, Canada, specializing in React, TypeScript, and Tailwind CSS.',
+  url: 'https://www.andrealarsen.me/',
+  jobTitle: 'Full-Stack Software Engineer',
+  description: 'Full-Stack Software Engineer based in Toronto with a strong frontend and UX focus, building production-ready web applications with Next.js, React, TypeScript, Node.js, PostgreSQL, and AWS.',
   sameAs: [
     'https://github.com/AnBLarsen',
     'https://linkedin.com/in/andreablarsen/',
   ],
-  knowsAbout: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'UX Design', 'Figma', 'Node.js'],
+  knowsAbout: 
+  [
+    'Next.js',
+    'React',
+    'TypeScript',
+    'Node.js',
+    'PostgreSQL',
+    'AWS',
+    'UX/UI Design',
+    'Figma',
+    'Accessibility',
+  ],
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Toronto',
@@ -46,15 +62,15 @@ export default function Home() {
   const [index, setIndex] = useState(0);
 
   usePageMeta({
-    title: 'Andrea Larsen | Web & UX Developer',
-    description: 'Web and UX developer based in Toronto, building responsive web apps with React, TypeScript, and Tailwind CSS.',
+    title: 'Andrea Larsen | Full-Stack Software Engineer',
+    description: 'Full-Stack Software Engineer based in Toronto with a strong frontend and UX focus, building production-ready web applications with Next.js, React, TypeScript, Node.js, PostgreSQL, and AWS.',
     canonical: 'https://www.andrealarsen.me/',
     jsonLd,
   });
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % titles.length);
+      setIndex((prev) => (prev + 1) % specialties.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
@@ -63,7 +79,7 @@ export default function Home() {
     <section className="py-20 px-4 text-center relative z-10 flex flex-col items-center justify-center">
 
       <motion.h1
-        className="text-5xl md:text-8xl leading-40 font-extrabold font-pacifico bg-gradient-to-r from-purple-light to-purple-dark text-transparent bg-clip-text"
+        className="text-5xl md:text-8xl font-extrabold font-pacifico bg-gradient-to-r from-purple-light to-purple-dark text-transparent bg-clip-text"
         initial="hidden"
         animate="visible"
         variants={fadeInUp}
@@ -72,27 +88,43 @@ export default function Home() {
       </motion.h1>
 
       <motion.p
-        className="mt-4 text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-bold flex items-center justify-center gap-2"
+        className="mt-4 text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-bold"
         initial="hidden"
         animate="visible"
         variants={fadeInUp}
       >
-        <span className="block w-[8ch] text-right tabular-nums">
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={titles[index]}
-              variants={titleVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              transition={{ duration: 0.8, ease: 'easeInOut' }}
-              className="inline-block w-full text-right"
-            >
-              {titles[index]}
-            </motion.span>
-          </AnimatePresence>
-        </span>
-        <span>Developer</span>
+        Full-Stack Software Engineer
+      </motion.p>
+
+      <motion.div
+        className="mt-3 min-h-7 w-44 text-base md:text-lg text-gray-600 dark:text-gray-400 flex items-center justify-center"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
+      >
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={specialties[index]}
+            variants={titleVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.8, ease: 'easeInOut' }}
+            className="inline-block"
+          >
+            {specialties[index]}
+          </motion.span>
+        </AnimatePresence>
+      </motion.div>
+
+      <motion.p
+        className="mt-5 max-w-2xl text-base md:text-lg text-gray-600 dark:text-gray-400"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
+      >
+        I build intuitive, accessible web applications across frontend interfaces,
+        APIs, authentication, payments, data workflows, and production tooling.
       </motion.p>
 
       <motion.div
@@ -105,7 +137,7 @@ export default function Home() {
           to="/projects"
           className="group px-6 py-2 rounded-md font-semibold text-white bg-gradient-to-r from-purple-light to-purple-dark hover:from-purple-dark hover:to-purple-light transition-all duration-300"
         >
-          Checkout My Work
+          Explore My Projects
         </Link>
         <a
           href="/resume.pdf"
@@ -113,7 +145,7 @@ export default function Home() {
           rel="noopener noreferrer"
           className="px-6 py-2 rounded-md font-semibold border text-purple-light border-purple-light hover:bg-purple-light hover:text-white transition"
         >
-          Checkout My Resume
+          View My Resume
         </a>
       </motion.div>
     </section>
