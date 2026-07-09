@@ -17,11 +17,88 @@ const fadeInUp = {
   },
 };
 
+const skillGroups = [
+  {
+    label: 'Frontend',
+    skills: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'JavaScript',
+      'Tailwind CSS',
+      'HTML',
+      'CSS',
+      'Framer Motion',
+      'Responsive Design',
+    ],
+  },
+  {
+    label: 'Backend & Data',
+    skills: [
+      'Node.js',
+      'Express',
+      'Next.js API Routes',
+      'REST APIs',
+      'PostgreSQL',
+      'SQL',
+      'MongoDB',
+    ],
+  },
+  {
+    label: 'Authentication & Integrations',
+    skills: [
+      'AWS Cognito',
+      'Auth0',
+      'Moneris',
+      'TSYS',
+      'Salesforce',
+      'Role-Based Access',
+    ],
+  },
+  {
+    label: 'Testing & Production',
+    skills: [
+      'Vitest',
+      'Playwright',
+      'New Relic',
+      'Pino Logger',
+      'AWS CloudWatch',
+      'Unleash',
+      'Google Tag Manager',
+    ],
+  },
+  {
+    label: 'Cloud & Tooling',
+    skills: [
+      'Docker',
+      'GitHub Actions',
+      'Vercel',
+      'Git',
+      'GitHub',
+      'Jira',
+      'Claude',
+      'Cursor',
+    ],
+  },
+  {
+    label: 'UX/UI',
+    skills: [
+      'Figma',
+      'FigJam',
+      'User Flows',
+      'Wireframing',
+      'Prototyping',
+      'Accessibility',
+      'WCAG',
+    ],
+  },
+];
+
 export default function About() {
 
   usePageMeta({
-    title: 'About | Andrea Larsen',
-    description: 'Learn about Andrea Larsen, a web and UX developer from Toronto with experience in React, TypeScript, AWS, and more.',
+    title: 'About Andrea Larsen | Full-Stack Software Engineer',
+    description: 'Learn about Andrea Larsen, a Full-Stack Software Engineer in Toronto with production experience in Next.js, React, TypeScript, Node.js, PostgreSQL, AWS, and UX/UI.',
     canonical: 'https://www.andrealarsen.me/about',
   });
 
@@ -61,15 +138,16 @@ export default function About() {
         >
           <img
             src="https://res.cloudinary.com/dirwvgura/image/upload/profile_gkbmyv.png"
-            alt="Profile"
+            alt="Andrea Larsen, Full-Stack Software Engineer"
             className="w-full h-full object-cover dark:hidden"
           />
           <img
             src="https://res.cloudinary.com/dirwvgura/image/upload/profile_gkbmyv.png"
-            alt="Profile dark"
+            alt="Andrea Larsen, Full-Stack Software Engineer"
             className="w-full h-full object-cover hidden dark:block"
           />
         </motion.div>
+        {/* About section ------------------------------------------------------*/}
 
         <motion.div
           initial="hidden"
@@ -83,29 +161,41 @@ export default function About() {
 
           <div className="space-y-6 text-neutral-800 dark:text-neutral-300 leading-relaxed">
             <p>
-              <span className="text-xl font-bold">👋 Hi there,</span> I’m a Software Developer with hands-on experience building user-centered web applications using{" "}
+              <span className="text-xl font-bold">👋 Hi there,</span>{' '}
+              I’m a Full-Stack Software Engineer with a strong frontend and UX
+              foundation. I build customer-facing web applications using{' '}
               <span className="font-semibold text-purple-light">
-                React, Next.js, TypeScript, Tailwind CSS, and Figma
-              </span>.
+                Next.js, React, TypeScript, Node.js, PostgreSQL, and AWS
+              </span>
+              .
             </p>
 
             <p>
-              In my first tech role as a Software Engineer, I contributed to customer-facing web applications, user portal functionality, authentication flows, service recommendation experiences, frontend testing, analytics, monitoring, and cloud-based workflows.
+              At Shack Shine, I worked across online booking, payments,
+              authentication, customer portals, operational reporting, testing, and
+              production monitoring. My experience includes modernizing a legacy
+              booking engine, integrating Moneris and TSYS payments, developing AWS
+              Cognito authentication flows, and connecting frontend reporting
+              interfaces to PostgreSQL-backed workflows.
             </p>
 
             <p>
-              I’ve worked with tools and technologies including{" "}
-              <strong className="text-purple-dark dark:text-purple-light">
-                AWS Cognito, Playwright, Vitest, New Relic, CloudWatch, GitHub Actions, Docker, PostgreSQL, Salesforce, Jira, Notion, Cursor, and Claude
-              </strong>.
+              My background in UX/UI and multimedia design shapes how I approach
+              engineering. I care about building software that is intuitive,
+              accessible, maintainable, and ready for real users.
             </p>
 
             <p>
-              My background combines UX/UI design, frontend development, accessibility, and customer experience. Before transitioning into tech, I spent several years as a pastry cook, where I developed precision, creativity, time management, and strong attention to detail.
+              I also enjoy exploring AI-assisted development and AI-powered product
+              experiences. Most recently, I built Fulbeeto, a bilingual World Cup
+              companion featuring live match data and an Anthropic-powered assistant
+              using tool calling and streaming responses.
             </p>
 
             <p>
-              That experience still shapes how I build software: with care for the user, the process, and the final experience. Right now, I’m focused on expanding into full-stack development and creating thoughtful digital experiences that are clean, accessible, and genuinely useful.
+              My strongest area is frontend engineering, but I’m comfortable
+              contributing across APIs, authentication, integrations, data workflows,
+              testing, and production support.
             </p>
           </div>
         </motion.div>
@@ -125,7 +215,7 @@ export default function About() {
             <h3 className="text-2xl font-bold text-purple-light">My Skills</h3>
 
             <div className="flex flex-wrap gap-2">
-              {['Next.js', 'React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'REST APIs', 'Figma', 'AWS Cognito', 'Vitest', 'Playwright', 'GitHub Actions', 'Docker', 'CI/CD', 'Agile/Scrum'].map((skill) => (
+              {['Next.js', 'React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'REST APIs', 'Figma', 'AWS Cognito', 'Vitest', 'Playwright', 'GitHub Actions', 'Docker', 'CI/CD'].map((skill) => (
                 <span key={skill} className="px-3 py-1 bg-purple-dark text-white rounded-md text-sm">
                   {skill}
                 </span>
@@ -140,6 +230,8 @@ export default function About() {
               )}
             </div>
 
+            {/* Skills section ------------------------------------------------------*/}
+
             <AnimatePresence>
               {showAllSkills && (
                 <motion.div
@@ -149,36 +241,33 @@ export default function About() {
                   transition={{ duration: 0.4, ease: easeOut }}
                   className="overflow-hidden space-y-6"
                 >
-                  {[
-                    { label: 'Frontend', skills: ['Next.js', 'React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'HTML5', 'CSS3', 'Framer Motion', 'Responsive Design'] },
-                    { label: 'UX / UI', skills: ['Figma', 'FigJam', 'User Flows', 'Wireframing', 'Prototyping', 'Accessibility', 'WCAG'] },
-                    { label: 'Backend & APIs', skills: ['Next.js API Routes', 'Node.js', 'Express.js', 'REST APIs', 'PostgreSQL', 'SQL', 'MongoDB', 'TypeORM'] },
-                    { label: 'Authentication', skills: ['AWS Cognito', 'AWS Amplify', 'Auth0', 'JWT', 'Role-Based Access'] },
-                    { label: 'Testing', skills: ['Vitest', 'Playwright', 'Unit Testing', 'E2E Testing'] },
-                    { label: 'Cloud & DevOps', skills: ['GitHub Actions', 'Docker', 'Vercel', 'AWS ECS', 'S3', 'Aurora RDS', 'API Gateway', 'Secrets Manager', 'CloudWatch', 'CI/CD'] },
-                    { label: 'Observability & Analytics', skills: ['New Relic', 'Pino Logger', 'Google Tag Manager'] },
-                    { label: 'Integrations & Tools', skills: ['Salesforce', 'Moneris', 'TSYS', 'Strapi', 'Unleash', 'Git', 'GitHub', 'Jira', 'Notion', 'Cursor', 'Claude'] },
-                    { label: 'Practices', skills: ['Agile/Scrum', 'Feature Flags', 'Cross-Browser Compatibility', 'API Integration', 'Production Support'] },
-                  ].map(({ label, skills }, i, arr) => (
-                    <div key={label}>
-                      <h4 className="text-sm font-semibold text-purple-light uppercase tracking-wide mb-2">{label}</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {skills.map((skill) => (
-                          <span key={skill} className="px-3 py-1 bg-purple-dark text-white rounded-md text-sm">
-                            {skill}
-                          </span>
-                        ))}
-                        {i === arr.length - 1 && (
-                          <button
-                            onClick={() => setShowAllSkills(false)}
-                            className="px-3 py-1 border border-purple-light text-purple-light rounded-md text-sm hover:bg-purple-light hover:text-white transition-colors"
-                          >
-                            − Show less
-                          </button>
-                        )}
-                      </div>
+                {skillGroups.map(({ label, skills }, i, arr) => (
+                  <div key={label}>
+                    <h4 className="text-sm font-semibold text-purple-light uppercase tracking-wide mb-2">
+                      {label}
+                    </h4>
+
+                    <div className="flex flex-wrap gap-2">
+                      {skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="px-3 py-1 bg-purple-dark text-white rounded-md text-sm"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+
+                      {i === arr.length - 1 && (
+                        <button
+                          onClick={() => setShowAllSkills(false)}
+                          className="px-3 py-1 border border-purple-light text-purple-light rounded-md text-sm hover:bg-purple-light hover:text-white transition-colors"
+                        >
+                          − Show less
+                        </button>
+                      )}
                     </div>
-                  ))}
+                  </div>
+                ))}
                 </motion.div>
               )}
             </AnimatePresence>
@@ -211,9 +300,21 @@ export default function About() {
               </a>
             </div>
 
+            {/* Languagues section ------------------------------------------------------*/}
+
             <div>
-              <h3 className="text-2xl font-bold text-purple-light mb-4">Languages</h3>
-              <p className='text-neutral-800 dark:text-neutral-200'>English, Spanish</p>
+              <h3 className="text-2xl font-bold text-purple-light mb-4">
+                Languages
+              </h3>
+
+              <div className="space-y-1 text-neutral-800 dark:text-neutral-200">
+                <p>
+                  <strong>Spanish:</strong> Native
+                </p>
+                <p>
+                  <strong>English:</strong> Fluent, EF SET C2 Proficient
+                </p>
+              </div>
             </div>
           </motion.div>
         
