@@ -3,11 +3,9 @@ import { AnimatePresence, motion, easeOut } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { usePageMeta } from '../../hooks/usePageMeta';
 
-const specialties = 
-[
-  'Frontend-Focused',
+const specialties = [
   'UX-Minded',
-  'Production-Ready',
+  'Product-Driven',
 ];
 
 const titleVariants = {
@@ -33,23 +31,23 @@ const jsonLd = {
   '@type': 'Person',
   name: 'Andrea Larsen',
   url: 'https://www.andrealarsen.me/',
-  jobTitle: 'Full-Stack Software Engineer',
-  description: 'Full-Stack Software Engineer based in Toronto with a strong frontend and UX focus, building production-ready web applications with Next.js, React, TypeScript, Node.js, PostgreSQL, and AWS.',
+  jobTitle: 'Frontend-Focused Software Engineer',
+  description: 'Frontend-focused Software Engineer based in Toronto with UX/UI background and full-stack experience building user-centered web applications with Next.js, React, TypeScript, Node.js, PostgreSQL, and AWS.',
   sameAs: [
     'https://github.com/AnBLarsen',
     'https://linkedin.com/in/andreablarsen/',
   ],
   knowsAbout: 
   [
+    'Frontend Engineering',
     'Next.js',
     'React',
     'TypeScript',
+    'UX/UI Design',
+    'Accessibility',
     'Node.js',
     'PostgreSQL',
     'AWS',
-    'UX/UI Design',
-    'Figma',
-    'Accessibility',
   ],
   address: {
     '@type': 'PostalAddress',
@@ -62,8 +60,8 @@ export default function Home() {
   const [index, setIndex] = useState(0);
 
   usePageMeta({
-    title: 'Andrea Larsen | Full-Stack Software Engineer',
-    description: 'Full-Stack Software Engineer based in Toronto with a strong frontend and UX focus, building production-ready web applications with Next.js, React, TypeScript, Node.js, PostgreSQL, and AWS.',
+    title: 'Andrea Larsen | Frontend-Focused Software Engineer',
+    description: 'Portfolio of Andrea Larsen, a frontend-focused Software Engineer in Toronto with UX/UI background and full-stack experience building user-centered web applications with Next.js, React, TypeScript, Node.js, PostgreSQL, and AWS.',
     canonical: 'https://www.andrealarsen.me/',
     jsonLd,
   });
@@ -79,7 +77,7 @@ export default function Home() {
     <section className="py-20 px-4 text-center relative z-10 flex flex-col items-center justify-center">
 
       <motion.h1
-        className="text-5xl md:text-8xl font-extrabold font-pacifico bg-gradient-to-r from-purple-light to-purple-dark text-transparent bg-clip-text"
+        className="text-5xl md:text-8xl leading-tight font-extrabold font-pacifico bg-gradient-to-r from-purple-light to-purple-dark text-transparent bg-clip-text"
         initial="hidden"
         animate="visible"
         variants={fadeInUp}
@@ -93,7 +91,7 @@ export default function Home() {
         animate="visible"
         variants={fadeInUp}
       >
-        Full-Stack Software Engineer
+        Frontend-Focused Software Engineer
       </motion.p>
 
       <motion.div
@@ -124,7 +122,7 @@ export default function Home() {
         variants={fadeInUp}
       >
         I build intuitive, accessible web applications across frontend interfaces,
-        APIs, authentication, payments, data workflows, and production tooling.
+        user flows, APIs, authentication, payments, data workflows, and production tooling.
       </motion.p>
 
       <motion.div

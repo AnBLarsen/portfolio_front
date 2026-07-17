@@ -17,7 +17,7 @@ const fadeInUp = {
 const projects = [
   {
     title: 'Fulbeeto',
-    role: 'Full-Stack Developer',
+    role: 'AI-Assisted Full-Stack Developer',
     image: 'https://res.cloudinary.com/dirwvgura/image/upload/fulbeeto3_twpojt.png',
     description:
       'A bilingual World Cup companion featuring live fixtures, standings, and knockout-stage data. BeeBot uses the Anthropic API, tool calling, and streaming responses to retrieve live match information before answering user questions.',
@@ -98,8 +98,8 @@ const projects = [
 
 export default function Projects() {
   usePageMeta({
-    title: 'Projects | Andrea Larsen, Full-Stack Software Engineer',
-    description: 'Selected projects by Andrea Larsen, a Full-Stack Software Engineer in Toronto building frontend, full-stack, UX-focused, and AI-powered web applications with Next.js, React, TypeScript, Node.js, and PostgreSQL.',
+    title: 'Projects | Andrea Larsen, F Software Engineer',
+    description: 'Selected projects by Andrea Larsen, a Frontend-Focused Software Engineer in Toronto building frontend, full-stack, UX-focused, and AI-powered web applications with Next.js, React, TypeScript, Node.js, and PostgreSQL.',
     canonical: 'https://www.andrealarsen.me/projects',
   });
 

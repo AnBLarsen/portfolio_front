@@ -16,8 +16,8 @@ const fadeInUp = {
 
 export default function Contact() {
   usePageMeta({
-    title: 'Contact Andrea Larsen | Full-Stack Software Engineer',
-    description: 'Get in touch with Andrea Larsen, Full-Stack Software Engineer based in Toronto, Canada.',
+    title: 'Contact Andrea Larsen | Frontend-Focused Software Engineer',
+    description: 'Get in touch with Andrea Larsen, Frontend-Focused Software Engineer based in Toronto, Canada.',
     canonical: 'https://www.andrealarsen.me/contact',
   });
 

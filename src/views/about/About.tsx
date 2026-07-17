@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { motion, AnimatePresence, easeOut } from 'framer-motion';
 import Aurora from '../../components/Aurora';
 import { MapPin } from 'lucide-react';
@@ -33,6 +33,18 @@ const skillGroups = [
     ],
   },
   {
+    label: 'UX/UI',
+    skills: [
+      'Figma',
+      'FigJam',
+      'User Flows',
+      'Wireframing',
+      'Prototyping',
+      'Accessibility',
+      'WCAG',
+    ],
+  },
+  {
     label: 'Backend & Data',
     skills: [
       'Node.js',
@@ -40,7 +52,6 @@ const skillGroups = [
       'Next.js API Routes',
       'REST APIs',
       'PostgreSQL',
-      'SQL',
       'MongoDB',
     ],
   },
@@ -79,30 +90,17 @@ const skillGroups = [
       'Claude',
       'Cursor',
     ],
-  },
-  {
-    label: 'UX/UI',
-    skills: [
-      'Figma',
-      'FigJam',
-      'User Flows',
-      'Wireframing',
-      'Prototyping',
-      'Accessibility',
-      'WCAG',
-    ],
-  },
+  }
 ];
 
 export default function About() {
 
   usePageMeta({
-    title: 'About Andrea Larsen | Full-Stack Software Engineer',
-    description: 'Learn about Andrea Larsen, a Full-Stack Software Engineer in Toronto with production experience in Next.js, React, TypeScript, Node.js, PostgreSQL, AWS, and UX/UI.',
+    title: 'About Andrea Larsen | Frontend-Focused Software Engineer',
+    description: 'Learn about Andrea Larsen, a frontend-focused Software Engineer in Toronto with production experience in Next.js, React, TypeScript, Node.js, PostgreSQL, AWS, and UX/UI.',
     canonical: 'https://www.andrealarsen.me/about',
   });
 
-  const sectionRef = useRef<HTMLDivElement>(null);
   const [showAllSkills, setShowAllSkills] = useState(false);
 
   const isDark = document.documentElement.classList.contains('dark');
@@ -125,7 +123,6 @@ export default function About() {
       <Aurora {...auroraProps} isDark={isDark} />
 
       <motion.section
-        ref={sectionRef}
         transition={{ duration: 0.6, ease: easeOut }}
         className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-6xl w-full z-10"
       >
@@ -138,12 +135,12 @@ export default function About() {
         >
           <img
             src="https://res.cloudinary.com/dirwvgura/image/upload/profile_gkbmyv.png"
-            alt="Andrea Larsen, Full-Stack Software Engineer"
+            alt="Andrea Larsen, Frontend-Focused Software Engineer"
             className="w-full h-full object-cover dark:hidden"
           />
           <img
             src="https://res.cloudinary.com/dirwvgura/image/upload/profile_gkbmyv.png"
-            alt="Andrea Larsen, Full-Stack Software Engineer"
+            alt="Andrea Larsen, Frontend-Focused Software Engineer"
             className="w-full h-full object-cover hidden dark:block"
           />
         </motion.div>
@@ -161,13 +158,12 @@ export default function About() {
 
           <div className="space-y-6 text-neutral-800 dark:text-neutral-300 leading-relaxed">
             <p>
-              <span className="text-xl font-bold">👋 Hi there,</span>{' '}
-              I’m a Full-Stack Software Engineer with a strong frontend and UX
-              foundation. I build customer-facing web applications using{' '}
+              I’m a frontend-focused Software Engineer with a UX/UI background and
+              full-stack experience. I build customer-facing web applications using{' '}
               <span className="font-semibold text-purple-light">
-                Next.js, React, TypeScript, Node.js, PostgreSQL, and AWS
+                Next.js, React, TypeScript, Node.js, and Tailwind CSS
               </span>
-              .
+              , bringing a user-centered mindset to the way I design and implement product experiences.
             </p>
 
             <p>
@@ -193,9 +189,10 @@ export default function About() {
             </p>
 
             <p>
-              My strongest area is frontend engineering, but I’m comfortable
-              contributing across APIs, authentication, integrations, data workflows,
-              testing, and production support.
+              My strongest area is frontend engineering, but I’m comfortable contributing
+              across APIs, authentication, integrations, data workflows, testing, and
+              production support. I’m especially interested in roles where I can build
+              thoughtful frontend experiences and collaborate closely with design and product.
             </p>
           </div>
         </motion.div>
@@ -205,7 +202,6 @@ export default function About() {
       <AnimatePresence>
         
           <motion.div
-            ref={sectionRef}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 40 }}
@@ -215,7 +211,7 @@ export default function About() {
             <h3 className="text-2xl font-bold text-purple-light">My Skills</h3>
 
             <div className="flex flex-wrap gap-2">
-              {['Next.js', 'React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'REST APIs', 'Figma', 'AWS Cognito', 'Vitest', 'Playwright', 'GitHub Actions', 'Docker', 'CI/CD'].map((skill) => (
+              {['Next.js', 'React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'UX/UI', 'Accessibility', 'Node.js', 'PostgreSQL', 'REST APIs', 'Figma', 'AWS Cognito', 'Vitest', 'Playwright', 'GitHub Actions', 'Docker'].map((skill) => (
                 <span key={skill} className="px-3 py-1 bg-purple-dark text-white rounded-md text-sm">
                   {skill}
                 </span>
@@ -300,7 +296,7 @@ export default function About() {
               </a>
             </div>
 
-            {/* Languagues section ------------------------------------------------------*/}
+            {/* Languages section ------------------------------------------------------*/}
 
             <div>
               <h3 className="text-2xl font-bold text-purple-light mb-4">
