@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-neutral-100 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 py-6 mt-auto relative z-10">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-sm text-center md:text-left">
-          &copy; {new Date().getFullYear()} Andrea Larsen. All rights reserved.
+          &copy; {new Date().getFullYear()} Andrea Larsen 👩🏽‍💻
         </p>
 
         <div className="flex items-center gap-6 text-xl">

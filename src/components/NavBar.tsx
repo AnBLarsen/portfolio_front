@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
-const navItems = ['Home', 'About', 'Projects', 'Contact'];
+const navItems = ['Home', 'About', 'Work', 'Contact'];
 
 export default function Navbar() {
 

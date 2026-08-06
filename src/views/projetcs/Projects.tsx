@@ -16,9 +16,27 @@ const fadeInUp = {
 
 const projects = [
   {
+    title: 'Shack Shine Online Booking Engine',
+    role: 'UX Software Engineer',
+    image: '/OBE.png',
+    description:
+      'Professional production work completed at Shack Shine. As the sole frontend engineer, I led the frontend modernization of the online booking system from legacy PHP to Next.js and TypeScript, improving reliability, maintainability, and the customer booking experience.',
+    tech: [
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'Salesforce',
+      'Moneris',
+      'TSYS',
+      'Playwright',
+      'New Relic',
+      'CloudWatch',
+    ],
+  },
+  {
     title: 'Fulbeeto',
-    role: 'AI-Assisted Full-Stack Developer',
-    image: 'https://res.cloudinary.com/dirwvgura/image/upload/fulbeeto3_twpojt.png',
+    role: 'AI-Assisted Project',
+    image: '/fulbeeto.png',
     description:
       'A bilingual World Cup companion featuring live fixtures, standings, and knockout-stage data. BeeBot uses the Anthropic API, tool calling, and streaming responses to retrieve live match information before answering user questions.',
     tech: [
@@ -36,7 +54,7 @@ const projects = [
   },
   {
     title: 'SmartQR',
-    role: 'Frontend Developer & UX/UI Designer',
+    role: 'Group project - Frontend developer',
     image: 'https://res.cloudinary.com/dirwvgura/image/upload/Screenshot_From_2025-07-07_17-05-50_ysmsdl.png',
     description:
       'A mobile-first self-ordering platform for restaurants. Customers can scan a QR code, browse menus, place orders, and move through a streamlined ordering flow. I focused on the frontend experience, authentication, dynamic QR generation, session state, and UX/UI design.',
@@ -56,7 +74,7 @@ const projects = [
   },
   {
     title: 'Lotus Spa',
-    role: 'Full-Stack Developer & UX/UI Designer',
+    role: 'Personal Full-Stack Project',
     image: 'https://res.cloudinary.com/dirwvgura/image/upload/Screenshot_From_2025-07-07_17-04-38_cj3u5e.png',
     description:
     'A full-stack spa booking platform with user authentication, appointment scheduling, PostgreSQL-backed data, and form validation. Booking rules restrict appointments to valid weekdays and help improve data accuracy.',
@@ -76,7 +94,7 @@ const projects = [
   },
   {
     title: 'Tech Mobile',
-    role: 'Frontend Developer & UX/UI Designer',
+    role: 'Personal Frontend Project',
     image: 'https://res.cloudinary.com/dirwvgura/image/upload/Screenshot_From_2025-07-07_17-04-01_w067hr.png',
     description:
       'A responsive electronics e-commerce frontend with authentication, protected routes, product browsing, cart management, persistent state, and animated interactions. The deployed version currently includes the frontend experience only.',
@@ -98,7 +116,7 @@ const projects = [
 
 export default function Projects() {
   usePageMeta({
-    title: 'Projects | Andrea Larsen, F Software Engineer',
+    title: 'Projects | Andrea Larsen, Frontend-Focused Software Engineer',
     description: 'Selected projects by Andrea Larsen, a Frontend-Focused Software Engineer in Toronto building frontend, full-stack, UX-focused, and AI-powered web applications with Next.js, React, TypeScript, Node.js, and PostgreSQL.',
     canonical: 'https://www.andrealarsen.me/projects',
   });
@@ -106,10 +124,10 @@ export default function Projects() {
   return (
     <section className="py-10 md:py-20 px-6 max-w-7xl mx-auto relative z-10 scrollbar-hide">
       <h2 className="text-4xl font-bold text-center mb-4 text-neutral-900 dark:text-white">
-        Featured <span className="text-purple-light">Projects</span>
+        Featured <span className="text-purple-light">Work</span>
       </h2>
       <p className="text-center text-neutral-600 dark:text-neutral-400 mb-10">
-        Selected projects that showcase my work across frontend development,
+        Selected professional work and personal projects that showcase my work across frontend development,
         full-stack applications, UX/UI, authentication, payments, data workflows, and AI-powered experiences.
       </p>
 
@@ -154,23 +172,26 @@ export default function Projects() {
               </div>
 
               <div className="flex flex-wrap justify-between gap-4 mt-auto pt-4">
-                
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-sm whitespace-nowrap text-purple-dark dark:text-purple-light hover:underline cursor-pointer"
-                >
-                  <FaGithub /> View Code
-                </a>
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-sm whitespace-nowrap text-purple-dark dark:text-purple-light hover:underline cursor-pointer"
-                >
-                  <FaExternalLinkAlt /> Live Demo
-                </a>
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-sm whitespace-nowrap text-purple-dark dark:text-purple-light hover:underline cursor-pointer"
+                  >
+                    <FaGithub /> View Code
+                  </a>
+                )}
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-sm whitespace-nowrap text-purple-dark dark:text-purple-light hover:underline cursor-pointer"
+                  >
+                    <FaExternalLinkAlt /> Live Demo
+                  </a>
+                )}
               </div>
             </div>
           </motion.div>

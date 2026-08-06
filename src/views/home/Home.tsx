@@ -132,10 +132,10 @@ export default function Home() {
         variants={fadeInUp}
       >
         <Link
-          to="/projects"
+          to="/work"
           className="group px-6 py-2 rounded-md font-semibold text-white bg-gradient-to-r from-purple-light to-purple-dark hover:from-purple-dark hover:to-purple-light transition-all duration-300"
         >
-          Explore My Projects
+          Explore My Work
         </Link>
         <a
           href="/resume.pdf"
