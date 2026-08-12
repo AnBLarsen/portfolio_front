@@ -66,7 +66,7 @@ export type CaseStudyMedia = {
       objective:
         'The objective was to modernize the booking experience from a legacy PHP flow into a scalable Next.js and TypeScript application that was easier to maintain, test, monitor, and extend. The rebuilt experience needed to support customer booking journeys, Salesforce workflows, payment integrations, analytics, and safer production releases.',
       myRole:
-        'I worked as a UX Software Engineer and frontend-focused Software Engineer on this project. I led the frontend modernization of the customer-facing booking flow, translated product and design requirements into responsive UI experiences, connected frontend behavior with API and Salesforce workflows, implemented payment-related frontend flows, and supported production quality through testing, feature flags, monitoring, and debugging.',
+        'I worked as a UX Software Engineer on this project, leading the frontend modernization of the customer-facing booking flow. I translated product and design requirements into responsive UI experiences, connected frontend behavior with API and Salesforce workflows, implemented payment-related frontend flows, and supported production quality through testing, feature flags, monitoring, and debugging.',
       media: [
         {
             type: 'video',
@@ -77,7 +77,7 @@ export type CaseStudyMedia = {
             type: 'image',
             src: '/step3.png',
             alt: 'Date and time selection step in the Shack Shine Online Booking Engine',
-            caption: 'Calendar step showing how customers where able to pick a date and time for the appointment.',
+            caption: 'Calendar step showing how customers were able to pick a date and time for the appointment.',
         },
         {
             type: 'image',
