@@ -1,6 +1,7 @@
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { motion, easeOut } from 'framer-motion';
 import { usePageMeta } from '../../hooks/usePageMeta';
+import { Link } from 'react-router-dom';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -32,6 +33,7 @@ const projects = [
       'New Relic',
       'CloudWatch',
     ],
+    caseStudy: '/projects/shack-shine-online-booking-engine',
   },
   {
     title: 'Fulbeeto',
@@ -172,6 +174,14 @@ export default function Projects() {
               </div>
 
               <div className="flex flex-wrap justify-between gap-4 mt-auto pt-4">
+                {project.caseStudy && (
+                  <Link
+                    to={project.caseStudy}
+                    className="flex items-center gap-1 text-sm whitespace-nowrap text-purple-dark dark:text-purple-light hover:underline cursor-pointer"
+                  >
+                    <FaExternalLinkAlt /> View Case Study
+                  </Link>
+                )}
                 {project.github && (
                   <a
                     href={project.github}

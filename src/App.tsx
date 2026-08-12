@@ -9,6 +9,7 @@ import { useAuroraProps, useIsDark } from './hooks/useAuroraProps';
 import Projects from './views/projetcs/Projects';
 import Contact from './views/contact/Contact';
 import Footer from './components/Footer';
+import CaseStudyRoute from './views/case-study/CaseStudyRoute';
 
 export default function App() {
 
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/work" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/projects/:slug" element={<CaseStudyRoute />} />
         </Routes>
       </main>
       <Analytics />
