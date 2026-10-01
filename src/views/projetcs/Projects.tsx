@@ -71,7 +71,7 @@ const projects = [
       'Cloudinary',
       'Framer Motion',
     ],
-    live: 'https://www.smart-qr.tech/',
+    live: 'https://smart-qr-front.vercel.app/',
     github: 'https://github.com/SmartQrProject',
   },
   {
