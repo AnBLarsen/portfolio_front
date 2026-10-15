@@ -178,7 +178,17 @@ export default function About() {
             <p>
               My background in UX/UI and multimedia design shapes how I approach
               engineering. I care about building software that is intuitive,
-              accessible, maintainable, and ready for real users.
+              accessible, maintainable, and ready for real users. Want to explore my
+              design work? Visit{' '}
+              <a
+                href="https://design.andrealarsen.me"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-purple-light hover:underline"
+              >
+                design.andrealarsen.me
+              </a>
+              .
             </p>
 
             <p>

@@ -132,6 +132,18 @@ export default function Projects() {
         Selected professional work and personal projects that showcase my work across frontend development,
         full-stack applications, UX/UI, authentication, payments, data workflows, and AI-powered experiences.
       </p>
+      <p className="text-center text-neutral-600 dark:text-neutral-400 -mt-6 mb-10">
+        Want to explore my design work? Visit{' '}
+        <a
+          href="https://design.andrealarsen.me"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-purple-light hover:underline"
+        >
+          design.andrealarsen.me
+        </a>
+        .
+      </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 justify-items-center">
         {projects.map((project) => (
