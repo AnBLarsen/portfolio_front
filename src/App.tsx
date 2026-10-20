@@ -1,34 +1,20 @@
 import { Routes, Route } from 'react-router-dom';
 import { Analytics } from "@vercel/analytics/react"
 import Navbar from './components/NavBar';
-import Home from './views/home/Home';
-import About from './views/about/About';
-import PageReveal from './components/PageReveal';
-import Aurora from './components/Aurora';
-import { useAuroraProps, useIsDark } from './hooks/useAuroraProps';
-import Projects from './views/projetcs/Projects';
-import Contact from './views/contact/Contact';
 import Footer from './components/Footer';
 import CaseStudyRoute from './views/case-study/CaseStudyRoute';
+import OnePage from './views/one-page/OnePage';
 
 export default function App() {
-
-  const isDark = useIsDark();
-  const auroraProps = useAuroraProps(isDark);
-
-    return (
-    <div className="min-h-screen flex flex-col bg-white text-black dark:bg-black dark:text-white transition-colors duration-300 relative overflow-hidden">
-     
-      <Aurora {...auroraProps} isDark={isDark} className="fixed inset-0 -z-10 pointer-events-none" />
-
-      <PageReveal />
+  return (
+    <div className="min-h-screen flex flex-col overflow-x-clip bg-cream text-ink relative">
       <Navbar />
-      <main className="flex-grow flex flex-col justify-center">
+      <main className="flex-grow flex flex-col">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/work" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/" element={<OnePage />} />
+          <Route path="/about" element={<OnePage initialSection="about" />} />
+          <Route path="/work" element={<OnePage initialSection="work" />} />
+          <Route path="/contact" element={<OnePage initialSection="contact" />} />
           <Route path="/projects/:slug" element={<CaseStudyRoute />} />
         </Routes>
       </main>

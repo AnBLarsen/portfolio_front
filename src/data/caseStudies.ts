@@ -3,6 +3,7 @@ export type CaseStudyMedia = {
     src: string;
     alt?: string;
     caption: string;
+    narrow?: boolean;
   };
   
   export type CaseStudySection = {
@@ -10,12 +11,28 @@ export type CaseStudyMedia = {
     body: string;
   };
   
+  export type CaseStudyDesignSection = {
+    title: string;
+    body: string;
+    images?: CaseStudyMedia[];
+  };
+
+  export type CaseStudySwatch = {
+    hex: string;
+    label?: string;
+  };
+
+  export type CaseStudyFont = {
+    family: string;
+    usage: string;
+  };
+
   export type CaseStudy = {
     slug: string;
     title: string;
     subtitle: string;
     role: string;
-    type: 'Professional Work' | 'Personal Project' | 'Group Project';
+    type: 'Professional Work' | 'Personal Project' | 'Group Project' | 'School Project';
     timeline: string;
     status?: string;
     heroImage: string;
@@ -24,14 +41,18 @@ export type CaseStudyMedia = {
     objective: string;
     myRole: string;
     media?: CaseStudyMedia[];
-    process: CaseStudySection[];
-    technicalApproach: CaseStudySection[];
+    designSections?: CaseStudyDesignSection[];
+    palette?: CaseStudySwatch[];
+    typography?: CaseStudyFont[];
+    process?: CaseStudySection[];
+    technicalApproach?: CaseStudySection[];
     uxProductDecisions?: string[];
     outcome: string;
     learnings?: string[];
     disclaimer?: string;
     links?: {
       live?: string;
+      prototype?: string;
       github?: string;
     };
   };
@@ -42,7 +63,7 @@ export type CaseStudyMedia = {
       title: 'Shack Shine Online Booking Engine',
       subtitle:
         'Modernizing a customer-facing booking flow from legacy PHP to a scalable Next.js experience.',
-      role: 'UX Software Engineer',
+      role: 'Junior UX Engineer',
       type: 'Professional Work',
       timeline: 'July 2025 – May 2026',
       status: 'No longer live; documented with test-data video and screenshots.',
@@ -66,7 +87,7 @@ export type CaseStudyMedia = {
       objective:
         'The objective was to modernize the booking experience from a legacy PHP flow into a scalable Next.js and TypeScript application that was easier to maintain, test, monitor, and extend. The rebuilt experience needed to support customer booking journeys, Salesforce workflows, payment integrations, analytics, and safer production releases.',
       myRole:
-        'I worked as a UX Software Engineer on this project, leading the frontend modernization of the customer-facing booking flow. I translated product and design requirements into responsive UI experiences, connected frontend behavior with API and Salesforce workflows, implemented payment-related frontend flows, and supported production quality through testing, feature flags, monitoring, and debugging.',
+        'I worked as a Junior UX Engineer on this project, leading the frontend modernization of the customer-facing booking flow. I translated product and design requirements into responsive UI experiences, connected frontend behavior with API and Salesforce workflows, implemented payment-related frontend flows, and supported production quality through testing, feature flags, monitoring, and debugging.',
       media: [
         {
             type: 'video',

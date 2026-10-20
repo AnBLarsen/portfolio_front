@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { usePageMeta } from '../../hooks/usePageMeta';
 import { motion, easeOut } from 'framer-motion';
 import { useForm, ValidationError } from '@formspree/react';
 import toast from 'react-hot-toast';
@@ -15,11 +14,6 @@ const fadeInUp = {
 };
 
 export default function Contact() {
-  usePageMeta({
-    title: 'Contact Andrea Larsen | Frontend-Focused Software Engineer',
-    description: 'Get in touch with Andrea Larsen, Frontend-Focused Software Engineer based in Toronto, Canada.',
-    canonical: 'https://www.andrealarsen.me/contact',
-  });
 
   const [state, handleSubmit] = useForm("xanjgpay");
   const formRef = useRef<HTMLFormElement>(null);
@@ -33,16 +27,16 @@ export default function Contact() {
   return (
     <section className="relative px-6 py-20 max-w-5xl mx-auto flex flex-col items-center justify-center z-10">
       <motion.h2
-        className="text-4xl md:text-5xl font-extrabold text-center text-neutral-900 dark:text-white mb-4"
+        className="text-4xl md:text-6xl font-extrabold text-center text-cream mb-4"
         initial="hidden"
         animate="visible"
         variants={fadeInUp}
       >
-        Contact <span className="text-purple-light">Me</span>
+        Contact <span className="text-lilac">Me</span>
       </motion.h2>
 
       <motion.p
-        className="text-center text-neutral-600 dark:text-neutral-400 mb-10 mx-auto"
+        className="text-center text-cream/85 mb-10 mx-auto"
         initial="hidden"
         animate="visible"
         variants={fadeInUp}
@@ -113,7 +107,7 @@ export default function Contact() {
           <button
             type="submit"
             disabled={state.submitting}
-            className="w-full py-2 bg-gradient-to-r from-purple-light to-purple-dark text-white font-semibold rounded-md hover:opacity-90 transition cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+            className="w-full py-2 bg-plum text-cream hover:bg-violet font-semibold rounded-md hover:opacity-90 transition cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {state.submitting ? 'Sending...' : 'Send Message'}
           </button>

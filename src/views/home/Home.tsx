@@ -1,18 +1,6 @@
-import { useEffect, useState } from 'react';
-import { AnimatePresence, motion, easeOut } from 'framer-motion';
+import { motion, easeOut } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { usePageMeta } from '../../hooks/usePageMeta';
-
-const specialties = [
-  'UX-Minded',
-  'Product-Driven',
-];
-
-const titleVariants = {
-  initial: { rotateX: 90, opacity: 0, y: -10 },
-  animate: { rotateX: 0, opacity: 1, y: 0 },
-  exit: { rotateX: -90, opacity: 0, y: 10 },
-};
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -31,8 +19,8 @@ const jsonLd = {
   '@type': 'Person',
   name: 'Andrea Larsen',
   url: 'https://www.andrealarsen.me/',
-  jobTitle: 'Frontend-Focused Software Engineer',
-  description: 'Frontend-focused Software Engineer based in Toronto with UX/UI background and full-stack experience building user-centered web applications with Next.js, React, TypeScript, Node.js, PostgreSQL, and AWS.',
+  jobTitle: 'UX Engineer',
+  description: 'UX Engineer based in Toronto who builds clear, accessible, user-centred web applications with React, Next.js, TypeScript, and Node.js.',
   sameAs: [
     'https://github.com/AnBLarsen',
     'https://linkedin.com/in/andreablarsen/',
@@ -57,72 +45,50 @@ const jsonLd = {
 };
 
 export default function Home() {
-  const [index, setIndex] = useState(0);
-
   usePageMeta({
-    title: 'Andrea Larsen | Frontend-Focused Software Engineer',
-    description: 'Portfolio of Andrea Larsen, a frontend-focused Software Engineer in Toronto with UX/UI background and full-stack experience building user-centered web applications with Next.js, React, TypeScript, Node.js, PostgreSQL, and AWS.',
+    title: 'Andrea Larsen | UX Engineer',
+    description: 'Portfolio of Andrea Larsen, a UX Engineer in Toronto building clear, accessible, user-centred web applications with React, Next.js, TypeScript, and Node.js.',
     canonical: 'https://www.andrealarsen.me/',
     jsonLd,
   });
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % specialties.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="py-20 px-4 text-center relative z-10 flex flex-col items-center justify-center">
+    <section className="py-20 px-6 md:px-12 w-full max-w-6xl mx-auto text-left relative z-10 flex flex-col items-start justify-center">
 
-      <motion.h1
-        className="text-5xl md:text-8xl leading-tight font-extrabold font-pacifico bg-gradient-to-r from-purple-light to-purple-dark text-transparent bg-clip-text"
+      <motion.p
+        className="text-xs md:text-sm font-bold uppercase tracking-[0.25em] text-orchid"
         initial="hidden"
         animate="visible"
         variants={fadeInUp}
       >
-        Andrea <span className="font-pacifico dark:text-neutral-300 text-neutral-700">Larsen</span>
+        UX Engineer
+      </motion.p>
+
+      <motion.h1
+        className="mt-4 text-6xl md:text-8xl leading-[0.95] font-semibold font-bodoni text-plum tracking-tight"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
+      >
+        Andrea <span className="italic font-normal text-violet">Larsen</span>
       </motion.h1>
 
       <motion.p
-        className="mt-4 text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-bold"
+        className="mt-6 max-w-xl text-lg md:text-2xl text-ink font-medium leading-snug"
         initial="hidden"
         animate="visible"
         variants={fadeInUp}
       >
-        Frontend-Focused Software Engineer
+        I build clear, accessible web apps with the people using them in mind.
       </motion.p>
 
-      <motion.div
-        className="mt-3 min-h-7 w-44 text-base md:text-lg text-gray-600 dark:text-gray-400 flex items-center justify-center"
-        initial="hidden"
-        animate="visible"
-        variants={fadeInUp}
-      >
-        <AnimatePresence mode="wait">
-          <motion.span
-            key={specialties[index]}
-            variants={titleVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            transition={{ duration: 0.8, ease: 'easeInOut' }}
-            className="inline-block"
-          >
-            {specialties[index]}
-          </motion.span>
-        </AnimatePresence>
-      </motion.div>
-
       <motion.p
-        className="mt-5 max-w-2xl text-base md:text-lg text-gray-600 dark:text-gray-400"
+        className="mt-4 max-w-md text-base md:text-lg text-muted"
         initial="hidden"
         animate="visible"
         variants={fadeInUp}
       >
-        I build intuitive, accessible web applications across frontend interfaces,
-        user flows, APIs, authentication, payments, data workflows, and production tooling.
+        A former pastry chef who still believes the small details are what people remember.
       </motion.p>
 
       <motion.div
@@ -132,8 +98,8 @@ export default function Home() {
         variants={fadeInUp}
       >
         <Link
-          to="/work"
-          className="group px-6 py-2 rounded-md font-semibold text-white bg-gradient-to-r from-purple-light to-purple-dark hover:from-purple-dark hover:to-purple-light transition-all duration-300"
+          to={{ pathname: '/', hash: '#work' }}
+          className="group px-6 py-2 rounded-md font-semibold text-cream bg-plum hover:bg-violet transition-all duration-300"
         >
           Explore My Work
         </Link>
@@ -141,7 +107,7 @@ export default function Home() {
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-6 py-2 rounded-md font-semibold border text-purple-light border-purple-light hover:bg-purple-light hover:text-white transition"
+          className="px-6 py-2 rounded-md font-semibold border text-plum border-plum hover:bg-plum hover:text-cream transition"
         >
           View My Resume
         </a>

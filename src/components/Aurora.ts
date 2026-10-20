@@ -241,7 +241,8 @@ export default function Aurora(props: AuroraProps) {
     return (
     React.createElement("div", {
       ref: ctnDom,
-      className: `fixed inset-0 z-0 pointer-events-none ${props.className ?? ''}`,
+      // A className replaces the default full-screen positioning (e.g. to keep it inside one section).
+      className: props.className ?? 'fixed inset-0 z-0 pointer-events-none',
     })
     );
 }

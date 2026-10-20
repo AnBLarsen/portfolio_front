@@ -1,9 +1,7 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence, easeOut } from 'framer-motion';
-import Aurora from '../../components/Aurora';
 import { MapPin } from 'lucide-react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { usePageMeta } from '../../hooks/usePageMeta';
+import { FaGithub, FaLinkedin, FaPaw } from 'react-icons/fa';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -93,57 +91,109 @@ const skillGroups = [
   }
 ];
 
-export default function About() {
+const photos = [
+  {
+    id: 'me',
+    src: 'https://res.cloudinary.com/dirwvgura/image/upload/profile_gkbmyv.png',
+    alt: 'Andrea Larsen, UX Engineer',
+    label: 'Me',
+  },
+  {
+    id: 'cuddles',
+    src: '/cuddles.png',
+    alt: "Cuddles, Andrea's Bernedoodle, sitting on a sidewalk covered in red fall leaves",
+    label: 'Cuddles, enjoying fall',
+  },
+];
 
-  usePageMeta({
-    title: 'About Andrea Larsen | Frontend-Focused Software Engineer',
-    description: 'Learn about Andrea Larsen, a frontend-focused Software Engineer in Toronto with production experience in Next.js, React, TypeScript, Node.js, PostgreSQL, AWS, and UX/UI.',
-    canonical: 'https://www.andrealarsen.me/about',
-  });
+export default function About() {
+  const [front, setFront] = useState('me');
+
 
   const [showAllSkills, setShowAllSkills] = useState(false);
 
-  const isDark = document.documentElement.classList.contains('dark');
-
-  const auroraProps = useMemo(
-    () => ({
-      colorStops: isDark
-        ? ['#3A29FF', '#FF94B4', '#FF3232']
-        : ['#FFC4EC', '#b64dff', '#8c4dff'],
-      amplitude: 1.0,
-      blend: 0.5,
-      speed: 0.5,
-    }),
-    [isDark]
-  );
 
 
   return (
     <div className="relative flex flex-col items-center justify-center px-4 py-20 transition-all duration-500">
-      <Aurora {...auroraProps} isDark={isDark} />
+      {/* Decorative shapes scattered around the About section */}
+      <img
+        src="/blob-pink.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none select-none hidden md:block absolute z-0 right-[6%] top-10 w-28 rotate-12"
+      />
+      <img
+        src="/blob-blue.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute z-0 left-[3%] bottom-4 w-12 md:w-16 -rotate-6"
+      />
 
       <motion.section
         transition={{ duration: 0.6, ease: easeOut }}
         className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-6xl w-full z-10"
       >
       
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeInUp}
-          className="w-64 h-64 rounded-xl overflow-hidden shadow-lg  dark:border-purple-light"
-        >
+        <div className="relative w-64 h-64 shrink-0 mb-12 md:mb-0 md:mr-10">
+          {/* Decorative gold line art behind the photo */}
           <img
-            src="https://res.cloudinary.com/dirwvgura/image/upload/profile_gkbmyv.png"
-            alt="Andrea Larsen, Frontend-Focused Software Engineer"
-            className="w-full h-full object-cover dark:hidden"
+            src="/about-lines.png"
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none select-none absolute left-1/2 top-1/2 w-[380px] max-w-none -translate-x-[58%] -translate-y-1/2 opacity-90"
           />
-          <img
-            src="https://res.cloudinary.com/dirwvgura/image/upload/profile_gkbmyv.png"
-            alt="Andrea Larsen, Frontend-Focused Software Engineer"
-            className="w-full h-full object-cover hidden dark:block"
-          />
-        </motion.div>
+          {/* Photo stack: click the photo in the back to bring it to the front */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+            className="relative z-10 w-64 h-64"
+          >
+            {photos.map((photo) => {
+              const isFront = photo.id === front;
+              return (
+                <motion.button
+                  key={photo.id}
+                  type="button"
+                  onClick={() => setFront(front === 'me' ? 'cuddles' : 'me')}
+                  aria-label={
+                    isFront
+                      ? `${photo.alt}. Click to see the other photo.`
+                      : `Show photo: ${photo.label}`
+                  }
+                  animate={
+                    isFront
+                      ? { rotate: -3, x: 0, y: 0, scale: 1 }
+                      : { rotate: 7, x: 48, y: 14, scale: 0.92 }
+                  }
+                  transition={{ type: 'spring', stiffness: 260, damping: 24 }}
+                  style={{ zIndex: isFront ? 20 : 10 }}
+                  className="absolute inset-0 bg-cream p-2 pb-9 rounded-xl shadow-xl text-left cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lilac"
+                >
+                  <img
+                    src={photo.src}
+                    alt={isFront ? photo.alt : ''}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                  <span className="absolute bottom-2 left-0 right-0 text-center text-sm font-semibold text-plum">
+                    {photo.label}
+                  </span>
+                </motion.button>
+              );
+            })}
+          </motion.div>
+          <p className="absolute -bottom-12 left-1/2 -translate-x-1/2 whitespace-nowrap text-center text-xs uppercase tracking-[0.15em] text-lilac/80">
+            {front === 'me' ? (
+              <>
+                Click on the photo to meet Cuddles{' '}
+                <FaPaw aria-hidden="true" className="inline-block ml-1 -mt-0.5 text-lilac" />
+              </>
+            ) : (
+              'Click to go back to me'
+            )}
+          </p>
+        </div>
         {/* About section ------------------------------------------------------*/}
 
         <motion.div
@@ -152,59 +202,41 @@ export default function About() {
           variants={fadeInUp}
           className="max-w-xl text-center md:text-left space-y-6"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-neutral-900 dark:text-white">
-            About <span className="text-purple-light">Me</span>
+          <h2 className="text-4xl md:text-6xl font-extrabold text-cream">
+            About <span className="text-lilac">Me</span>
           </h2>
 
-          <div className="space-y-6 text-neutral-800 dark:text-neutral-300 leading-relaxed">
+          <div className="space-y-6 text-cream/90 leading-relaxed">
             <p>
-              I’m a frontend-focused Software Engineer with a UX/UI background and
-              full-stack experience. I build customer-facing web applications using{' '}
-              <span className="font-semibold text-purple-light">
-                Next.js, React, TypeScript, Node.js, and Tailwind CSS
-              </span>
-              , bringing a user-centered mindset to the way I design and implement product experiences.
+              Hi, I’m Andrea! I’m a UX engineer: I build frontend experiences with a strong focus on the people using them.
+              I aim for web applications that are clear, accessible, and easy to use, and I
+              care as much about how something works for people as how it’s built.
             </p>
 
             <p>
-              At Shack Shine, I worked across online booking, payments,
-              authentication, customer portals, operational reporting, testing, and
-              production monitoring. My experience includes modernizing a legacy
-              booking engine, integrating Moneris and TSYS payments, developing AWS
-              Cognito authentication flows, and connecting frontend reporting
-              interfaces to PostgreSQL-backed workflows.
+              Before tech, I was a pastry chef. I loved the creativity and the joy of
+              making something for someone, and I still work the same way: understand
+              who you’re building for, sweat the details, and refine until it’s right.
+              That curiosity took me to Humber College’s Multimedia Design and Development
+              program, then Henry’s Full-Stack Development bootcamp, and on to Shack Shine,
+              where I modernized the customer booking engine and worked across payments,
+              authentication, testing, and production support.
             </p>
 
             <p>
-              My background in UX/UI and multimedia design shapes how I approach
-              engineering. I care about building software that is intuitive,
-              accessible, maintainable, and ready for real users. Want to explore my
-              design work? Visit{' '}
-              <a
-                href="https://design.andrealarsen.me"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-purple-light hover:underline"
-              >
-                design.andrealarsen.me
-              </a>
-              .
+              I’m originally from Argentina, so Spanish is my first language, and I’ve
+              called Canada home for almost nine years. I love it here, and fall is my
+              favourite season. Outside of work, you’ll find me on long walks with my dog
+              Cuddles, a 100&nbsp;lb Bernedoodle, at ballet class, or in the kitchen
+              baking something nice.
             </p>
 
             <p>
-              I also enjoy exploring AI-assisted development and AI-powered product
-              experiences. Most recently, I built Fulbeeto, a bilingual World Cup
-              companion featuring live match data and an Anthropic-powered assistant
-              using tool calling and streaming responses.
-            </p>
-
-            <p>
-              My strongest area is frontend engineering, but I’m comfortable contributing
-              across APIs, authentication, integrations, data workflows, testing, and
-              production support. I’m especially interested in roles where I can build
-              thoughtful frontend experiences and collaborate closely with design and product.
+              I’m looking for design-minded frontend or UX engineering roles where I can
+              build thoughtful experiences and work closely with design and product.
             </p>
           </div>
+
         </motion.div>
 
       </motion.section>
@@ -216,20 +248,20 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 40 }}
             transition={{ duration: 0.6, ease: easeOut }}
-            className="mt-16 w-full max-w-5xl bg-white/40 dark:bg-black/40 text-white dark:text-white backdrop-blur-md rounded-xl mx-auto px-8 py-8 space-y-8"
+            className="relative z-10 mt-16 w-full max-w-5xl bg-cream/10 text-cream border border-cream/20 rounded-xl mx-auto px-8 py-8 space-y-8"
           >
-            <h3 className="text-2xl font-bold text-purple-light">My Skills</h3>
+            <h3 className="text-2xl font-bold text-lilac">My Skills</h3>
 
             <div className="flex flex-wrap gap-2">
-              {['Next.js', 'React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'UX/UI', 'Accessibility', 'Node.js', 'PostgreSQL', 'REST APIs', 'Figma', 'AWS Cognito', 'Vitest', 'Playwright', 'GitHub Actions', 'Docker'].map((skill) => (
-                <span key={skill} className="px-3 py-1 bg-purple-dark text-white rounded-md text-sm">
+              {['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'REST APIs', 'Playwright', 'Vitest', 'Figma', 'UX/UI', 'Accessibility'].map((skill) => (
+                <span key={skill} className="px-3 py-1 bg-cream text-plum rounded-md text-sm">
                   {skill}
                 </span>
               ))}
               {!showAllSkills && (
                 <button
                   onClick={() => setShowAllSkills(true)}
-                  className="px-3 py-1 border border-purple-light text-purple-light rounded-md text-sm hover:bg-purple-light hover:text-white transition-colors"
+                  className="px-3 py-1 border border-lilac text-lilac rounded-md text-sm hover:bg-cream hover:text-plum transition-colors"
                 >
                   + Show all
                 </button>
@@ -249,7 +281,7 @@ export default function About() {
                 >
                 {skillGroups.map(({ label, skills }, i, arr) => (
                   <div key={label}>
-                    <h4 className="text-sm font-semibold text-purple-light uppercase tracking-wide mb-2">
+                    <h4 className="text-sm font-semibold text-lilac uppercase tracking-wide mb-2">
                       {label}
                     </h4>
 
@@ -257,7 +289,7 @@ export default function About() {
                       {skills.map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1 bg-purple-dark text-white rounded-md text-sm"
+                          className="px-3 py-1 bg-cream text-plum rounded-md text-sm"
                         >
                           {skill}
                         </span>
@@ -266,7 +298,7 @@ export default function About() {
                       {i === arr.length - 1 && (
                         <button
                           onClick={() => setShowAllSkills(false)}
-                          className="px-3 py-1 border border-purple-light text-purple-light rounded-md text-sm hover:bg-purple-light hover:text-white transition-colors"
+                          className="px-3 py-1 border border-lilac text-lilac rounded-md text-sm hover:bg-cream hover:text-plum transition-colors"
                         >
                           − Show less
                         </button>
@@ -278,9 +310,9 @@ export default function About() {
               )}
             </AnimatePresence>
             <div>
-              <h3 className="text-2xl font-bold text-purple-light mb-4">Contact Info</h3>
-              <div className="flex items-center gap-2 mb-2 text-neutral-800 dark:text-neutral-200">
-                <MapPin size={18} className="text-purple-light" />
+              <h3 className="text-2xl font-bold text-lilac mb-4">Contact Info</h3>
+              <div className="flex items-center gap-2 mb-2 text-cream/90">
+                <MapPin size={18} className="text-lilac" />
                 <span>Toronto, Canada</span>
               </div>
 
@@ -288,9 +320,9 @@ export default function About() {
                 href="https://github.com/AnBLarsen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 mb-2 text-neutral-800 dark:text-neutral-200 hover:underline "
+                className="flex items-center gap-2 mb-2 text-cream/90 hover:underline "
               >
-                <FaGithub className="text-purple-light" size={18} />
+                <FaGithub className="text-lilac" size={18} />
                 github.com/AnBLarsen
               </a>
 
@@ -299,9 +331,9 @@ export default function About() {
                 href="https://linkedin.com/in/andreablarsen/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-neutral-800 dark:text-neutral-200 hover:underline"
+                className="flex items-center gap-2 text-cream/90 hover:underline"
               >
-                <FaLinkedin className="text-purple-light" size={18} />
+                <FaLinkedin className="text-lilac" size={18} />
                 linkedin.com/in/andreablarsen
               </a>
             </div>
@@ -309,11 +341,11 @@ export default function About() {
             {/* Languages section ------------------------------------------------------*/}
 
             <div>
-              <h3 className="text-2xl font-bold text-purple-light mb-4">
+              <h3 className="text-2xl font-bold text-lilac mb-4">
                 Languages
               </h3>
 
-              <div className="space-y-1 text-neutral-800 dark:text-neutral-200">
+              <div className="space-y-1 text-cream/90">
                 <p>
                   <strong>Spanish:</strong> Native
                 </p>

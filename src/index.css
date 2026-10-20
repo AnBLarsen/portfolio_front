@@ -5,17 +5,23 @@ body, html, #root {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: "Nunito", sans-serif;
-  
+  font-family: "Bitter", "Bitter Variable", Georgia, serif;
+  scroll-behavior: smooth;
 }
 
 
 @theme{
-  --color-purple-dark: #663399;
-  --color-purple-light: #ba55d3;
+  /* Purple palette (developer portfolio) */
+  --color-cream: #F7F2FA;
+  --color-lilac: #E7DCF0;
+  --color-plum: #2E1A47;
+  --color-violet: #663399;
+  --color-orchid: #8E44AD;
+  --color-ink: #1E1A24;
+  --color-muted: #5E566A;
 
-  --font-pacifico: Pacifico, "cursive";
-  --font-nunito: Nunito, "sans-serif";
+  --font-bodoni: "Bodoni Moda", "Bodoni Moda Variable", Didot, serif;
+  --font-bitter: "Bitter", "Bitter Variable", Georgia, serif;
 }
 
 .scrollbar-hide {
